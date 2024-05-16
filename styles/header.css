@@ -1,0 +1,230 @@
+header {
+    background-size: cover;
+    position: relative;
+    background-image: url("../assets/images/header-background.png");
+}
+
+.header-background {
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.container {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 18px 0 40px 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.header-logo__img {
+    height: 27px;
+    width: 79.5px;
+}
+
+.header-logo__text {
+    font-family: Golos Text;
+    font-size: 14.42px;
+    font-weight: 700;
+    line-height: 15.57px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding-left: 5.5px;
+}
+
+.header-content {
+    width: 100%;
+    border-radius: 66px 0 0 0;
+    z-index: 2;
+    position: relative;
+}
+
+.header-content__headline {
+    font-family: Merriweather;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 39.6px;
+    letter-spacing: 1.2361623048782349px;
+    text-transform: uppercase;
+}
+
+.header-content__headline__center {
+    text-align: center;
+}
+
+.header-content__headline__end {
+    text-align: end;
+}
+
+.header-content__text {
+    font-family: Golos Text;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.4px;
+    text-align: left;
+    padding: 24px 0 32px;
+}
+
+.header-content__control {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content__control a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* height: 47px; */
+    padding: 13px 20px 13px 20px;
+    border-radius: 66px;
+    font-family: Golos Text;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-content__control__primary {
+    background-color: rgba(31, 31, 31, 1);
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 14px;
+}
+
+.header-content__control__primary:hover {
+    background-color: rgba(251, 206, 81, 1);
+
+}
+
+.header-content__control__secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(31, 31, 31, 1);
+    margin-bottom: 291px;
+    /*background-color: rgba(251, 206, 81, 1);*/
+
+}
+
+.header-content__control__secondary:hover {
+    background-color: rgba(31, 31, 31, 1);
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.running-line {
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(245, 73, 50, 1);
+    height: 38px;
+    gap: 12px;
+    font-family: Merriweather;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);
+    z-index: 2;
+}
+
+.running-line img {
+    padding: 0 12px 4px 12px;
+}
+
+marquee {
+    text-transform: uppercase;
+}
+
+@media (min-width: 1366px) {
+    header {
+        background-image: url("../assets/images/header-background-desktop.png");
+        background-size: contain;
+    }
+
+    .container {
+        margin: 0 72px;
+    }
+
+    .header-logo {
+        padding: 26px 0 62px;
+    }
+
+    .header-logo__img {
+        width: 91.82px;
+        height: 31.18px;
+    }
+
+    .header-content {
+        width: 46%;
+    }
+
+    .header-content__headline {
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 66px;
+    }
+
+    .header-content__text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 23.4px;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    .header-content__headline__center {
+        text-align: center;
+    }
+
+    .header-logo__text {
+        font-size: 16.65px;
+    }
+
+    .header-content__control {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 130px;
+    }
+
+    .header-content__control a {
+        margin-bottom: 0;
+        min-height: 72px;
+        padding: 0 20px;
+        width: 40%;
+    }
+
+    .header-content__control__primary {
+        /*max-width: 263px;*/
+    }
+
+    .header-content__control__secondary {
+        background: none;
+        border: 2px solid rgba(31, 31, 31, 1);
+    }
+
+    .header-content__control__secondary:hover {
+        background-color: rgba(31, 31, 31, 1);
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .running-line {
+        height: 60px;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: right;
+
+    }
+
+}

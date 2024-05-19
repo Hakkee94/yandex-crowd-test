@@ -85,7 +85,6 @@ header {
     text-align: center;
     align-items: center;
     justify-content: center;
-    /* height: 47px; */
     padding: 13px 20px 13px 20px;
     border-radius: 66px;
     font-family: Golos Text;
@@ -104,21 +103,17 @@ header {
 
 .header-content__control__primary:hover {
     background-color: rgba(251, 206, 81, 1);
-
 }
 
 .header-content__control__secondary {
     background-color: rgba(255, 255, 255, 0.9);
     color: rgba(31, 31, 31, 1);
     margin-bottom: 291px;
-    /*background-color: rgba(251, 206, 81, 1);*/
-
 }
 
 .header-content__control__secondary:hover {
     background-color: rgba(31, 31, 31, 1);
     color: rgba(255, 255, 255, 1);
-
 }
 
 .running-line {
@@ -204,10 +199,6 @@ marquee {
         width: 40%;
     }
 
-    .header-content__control__primary {
-        /*max-width: 263px;*/
-    }
-
     .header-content__control__secondary {
         background: none;
         border: 2px solid rgba(31, 31, 31, 1);
@@ -224,7 +215,6 @@ marquee {
         font-weight: 400;
         line-height: 24.2px;
         text-align: right;
-
     }
 
 }

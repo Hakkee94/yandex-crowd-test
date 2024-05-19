@@ -8,6 +8,8 @@ const JSCarousel = ({
     let paginationContainer;
 
     const carousel = document.querySelector(carouselSelector);
+    const isSecondCarousel = carouselSelector === ".main-content__members__slider"
+    const activeClass = isSecondCarousel ? "carousel-number--active" : "carousel-btn--active"
 
     if (!carousel) {
         console.error("Specify a valid selector for the carousel.");
@@ -97,14 +99,25 @@ const JSCarousel = ({
             carouselControlInner.appendChild(paginationContainer);
         }
 
-        slides.forEach((slide, index) => {
+        slides.forEach((slide, index, arr) => {
             if (window.matchMedia("(max-width: 768px)").matches) {
                 slide.style.transform = `translateX(${index * 100}%)`;
             } else {
-                slide.style.transform = `translateX(${(index - 1) * 33.3}%)`;
+                slide.style.transform = `translateX(${(index) * 33.3}%)`;
             }
+            console.log(arr.length)
+            if (enablePagination && isSecondCarousel) {
+                const paginationBtn = addElement(
+                    "span",
+                    {
+                        class: `carousel-number caroursel-number--${index + 1} ${!index && 'carousel-number--active'}`,
+                        role: "tab",
+                    },
+                    (index + 1) + '/' + arr.length
+                );
 
-            if (enablePagination) {
+                paginationContainer.appendChild(paginationBtn);
+            } else if (enablePagination && !isSecondCarousel) {
                 const paginationBtn = addElement(
                     "button",
                     {
@@ -117,7 +130,7 @@ const JSCarousel = ({
                 paginationContainer.appendChild(paginationBtn);
 
                 if (index === 0) {
-                    paginationBtn.classList.add("carousel-btn--active");
+                    paginationBtn.classList.add(activeClass);
                     paginationBtn.setAttribute("aria-selected", true);
                 }
 
@@ -143,16 +156,16 @@ const JSCarousel = ({
     const updatePaginationBtns = () => {
         const paginationBtns = paginationContainer.children;
         const prevActiveBtns = Array.from(paginationBtns).filter((btn) =>
-            btn.classList.contains("carousel-btn--active")
+            btn.classList.contains(activeClass)
         );
         prevActiveBtns.forEach((btn) => {
-            btn.classList.remove("carousel-btn--active");
+            btn.classList.remove(activeClass);
             btn.removeAttribute("aria-selected");
         });
 
         const currActiveBtns = paginationBtns[currentSlideIndex];
         if (currActiveBtns) {
-            currActiveBtns.classList.add("carousel-btn--active");
+            currActiveBtns.classList.add(activeClass);
             currActiveBtns.setAttribute("aria-selected", true);
         }
     };
@@ -184,6 +197,7 @@ const JSCarousel = ({
     const attachEventListeners = () => {
         prevBtn.addEventListener("click", handlePrevBtnClick);
         nextBtn.addEventListener("click", handleNextBtnClick);
+        isSecondCarousel && setInterval(handleNextBtnClick,4000);
     };
 
     const create = () => {
@@ -268,12 +282,3 @@ if (window.matchMedia("(max-width: 768px)").matches) {
         );
     });
 }
-
-
-
-
-
-
-
-
-

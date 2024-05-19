@@ -583,7 +583,6 @@ footer {
         position: relative;
         background-image: url("../assets/images/Copper-paper.png");
         background-size: cover;
-
     }
 
     .stages-of-transformation__slider {
@@ -729,3 +728,4 @@ footer {
         padding-bottom: 100px;
     }
 }
+

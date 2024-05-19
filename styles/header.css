@@ -4,6 +4,12 @@ header {
     background-image: url("../assets/images/header-background.png");
 }
 
+.header-container {
+    /*background-size: cover;*/
+    /*position: relative;*/
+    /*background-image: url("../assets/images/header-background.png");*/
+}
+
 .header-background {
     opacity: 0.5;
     position: absolute;
@@ -216,5 +222,20 @@ marquee {
         line-height: 24.2px;
         text-align: right;
     }
+}
 
+@media (min-width: 1920px) {
+    .header-desktop {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("../assets/images/1920.png");
+    }
+
+    .header-container {
+        margin: 0 0 0 348.5px;
+    }
+
+    .header-content {
+        width: 35.5%;
+    }
 }
